@@ -76,7 +76,7 @@ Vagrant.configure("2") do |config|
     }
 
     chef.run_list = [
-      "recipe[apt",
+      "recipe[apt]",
       "recipe[nanoc-compass-overflow-demo::default]"
     ]
   end
