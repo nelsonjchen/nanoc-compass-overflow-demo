@@ -72,6 +72,15 @@ Vagrant.configure("2") do |config|
         :user_global_gems => [
           {:name => 'bundler'}
         ]
+      },
+      :oh_my_zsh => {
+        :users => [
+          {
+            :login => 'vagrant',
+            :theme => 'bira',
+            :plugins => %w(gem bundler rails)
+          }
+        ]
       }
     }
 
@@ -80,6 +89,7 @@ Vagrant.configure("2") do |config|
       "recipe[rvm]",
       "recipe[rvm::vagrant]",
       "recipe[nanoc-compass-overflow-demo::default]",
+      "recipe[oh-my-zsh]"
     ]
   end
 end
