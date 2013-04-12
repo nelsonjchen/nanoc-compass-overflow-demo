@@ -11,5 +11,15 @@ git '/home/vagrant/demo/' do
   repository 'https://github.com/crazysim/nanoc-foundation-blog.git'
   reference 'overflow-demo'
   action :sync
+  notifies :run, 'script[demo-bundler]', :immediately
+  user 'vagrant'
+  group 'vagrant'
 end
 
+script 'demo-bundler' do
+  interpreter 'zsh'
+  cwd '/home/vagrant/demo'
+  user 'vagrant'
+  code 'bundle'
+  action :nothing
+end
