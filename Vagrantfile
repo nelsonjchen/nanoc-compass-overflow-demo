@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
   # please see the online documentation at vagrantup.com.
 
   config.vm.hostname = "nanoc-compass-overflow-demo-berkshelf"
+  config.berkshelf.enabled = true
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "opscode-ubuntu-12.04"
