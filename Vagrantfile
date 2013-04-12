@@ -71,7 +71,11 @@ Vagrant.configure("2") do |config|
       :rvm => {
         :user_global_gems => [
           {:name => 'bundler'}
-        ]
+        ],
+        :vagrant => {
+            :system_chef_client => '/opt/chef/bin/chef-client',
+            :system_chef_solo => '/opt/chef/bin/chef-solo'
+        }
       },
       :oh_my_zsh => {
         :users => [
