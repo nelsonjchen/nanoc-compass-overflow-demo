@@ -7,4 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
+git '/home/vagrant/demo/' do
+  repository 'https://github.com/crazysim/nanoc-foundation-blog.git'
+  reference 'overflow-demo'
+  action :sync
+end
 

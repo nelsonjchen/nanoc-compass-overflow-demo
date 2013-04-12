@@ -69,7 +69,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :chef_solo do |chef|
     chef.json = {
       :rvm => {
-        :user_global_gems => [
+        :global_gems => [
           {:name => 'bundler'}
         ],
         :vagrant => {
@@ -90,7 +90,7 @@ Vagrant.configure("2") do |config|
 
     chef.run_list = [
       "recipe[apt]",
-      "recipe[rvm]",
+      "recipe[rvm::system]",
       "recipe[rvm::vagrant]",
       "recipe[nanoc-compass-overflow-demo::default]",
       "recipe[oh-my-zsh]"
